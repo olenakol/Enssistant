@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+<div id="timer"></div>
+<script>
+var limit = 1801; // в секундах
+function processTimer(){
+if (limit > 0) {
+setTimeout("processTimer()",1000);
+limit--;
+} else {
+// здесь действия после завершения таймера
+answer();
+test.input(radio).disable = true;
+//..
+}
+var limit_div = parseInt(limit/60); // минуты
+var limit_mod = limit - limit_div*60; // секунды
+// строка с оставшимся временем
+limit_str = "&nbsp;&nbsp;";
+if (limit_div < 10) limit_str = limit_str + "0";
+limit_str = limit_str + limit_div + ":";
+if (limit_mod < 10) limit_str = limit_str + "0";
+limit_str = limit_str + limit_mod + "&nbsp;&nbsp;";
+// вывод времени
+el_timer = document.getElementById("timer");
+if (el_timer) el_timer.innerHTML = limit_str;
+}
+processTimer();
+</script>		
+     <p><b>In this section, you need to read the text and listen to the audio for better learning. The text contains all the words from "The words" tab</b></p>
+                                            
+   <br><p> </p>
+   <textarea cols="100" rows="15" class="inpAdm">
+       Chronobiology might sound a little futuristic – like something from a science fiction novel, perhaps – but it’s actually a field of study that concerns one of the oldest processes life on this planet has ever known: short-term rhythms of time and their effect on flora and fauna. 
+ 
+This can take many forms. Marine life, for example, is influenced by tidal patterns. Animals tend to be active or inactive depending on the position of the sun or moon. Numerous creatures, humans included, are largely diurnal – that is, they like to come out during the hours of sunlight. Nocturnal animals, such as bats and possums, prefer to forage by night. A third group are known as crepuscular: they thrive in the lowlight of dawn and dusk and remain inactive at other hours. 
+ 
+When it comes to humans, chronobiologists are interested in what is known as the circadian rhythm. This is the complete cycle our bodies are naturally geared to undergo within the passage of a twenty-four hour day. Aside from sleeping at night and waking during the day, each cycle involves many other factors such as changes in blood pressure and body temperature. Not everyone has an identical circadian rhythm. ‘Night people’, for example, often describe how they find it very hard to operate during the morning, but become alert and focused by evening. This is a benign variation within circadian rhythms known as a chronotype. 
+ 
+Scientists have limited abilities to create durable modifications of chronobiological demands. Recent therapeutic developments for humans such as artificial light machines and melatonin administration can reset our circadian rhythms, for example, but our bodies can tell the difference and health suffers when we breach these natural rhythms for extended periods of time. Plants appear no more malleable in this 
+   </textarea>
+   
+      <script type="text/javascript" language="JavaScript">// <![CDATA[
+ var res="2"; 
+function check_me()
+{
+    var count=0;
+    with(document.test) {
+if (!Q1[0].checked&&!Q1[1].checked&&!Q1[2].checked&&!Q1[3].checked)  
+{count+=1};  
+if (count>0) alert("You did not do all the questions. Check yourself!")    
+        else answer();
+    }
+} 
+ 
+function control(k, f1) {
+if (k==1&&f1.checked) return true;
+
+return false;
+}
+
+function answer() {
+answ="";
+     with(document)    {
+answ+=control(res.charAt(0) ,test.Q1[0],test.Q1[1],test.Q1[2],test.Q1[3])?"1":"0";
+
+ 
+showResult();
+    }
+}
+ 
+function showResult()   {
+    var nok=0;
+    var i,s;
+ 
+for (i=0; i<answ.length;i++) {nok+=answ.charAt(i)=="1"?1:0;}
+if(nok==21) s="You have an advanced level";
+if(nok<21) s="You have an intermediate level";
+if(nok<=15.75) s="You have an average level";
+if (nok<=10.5) s="You have an discovery level";
+    document.test.s1.
+   value="Number of correct answers. "+nok+" "+s+" Look at back at your check asnwers. If the answer is inccorect, there (+). If answer is wrong, there (-).";
+ 
+with(document.test)
+    {
+    if (answ.charAt(0)=="1") {T1.value=" + "} else {T1.value=" - "};
+   
+     }
+}
+function showhide(obj){
+    if(obj == 'none') return 'inline';
+    else return 'none';
+}
+// ]]>
+</script>
+						   
+<center><h2>Questions 1–7 </h2></center><br/>
+<p>Do the following statements agree with the information given in Reading Passage 1? </p>
+<p>Do the following statements agree with the information given in Reading Passage 1? </p>
+<p><b>TRUE</b> if the statement agrees with the information </p>
+<p><b>FALSE</b> if the statement contradicts the information </p>
+<p><b>NOT GIVEN </b> if there is no information on this </p>
+
+
+<form name="test"><ol>
+<li><INPUT type="text" size="1" value="" name="T1"/><b> Chronobiology is the study of how living things have evolved over time. </b><br/>
+<input type="radio" value="0" name="Q1"/> TRUE<br />
+<input type="radio" value="1" name="Q1"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T2"/><b> The rise and fall of sea levels affects how sea creatures behave.  </b><br/>
+<input type="radio" value="0" name="Q2"/> TRUE<br />
+<input type="radio" value="1" name="Q2"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T3"/><b> Most animals are active during the daytime.  </b><br/>
+<input type="radio" value="0" name="Q3"/> TRUE<br />
+<input type="radio" value="1" name="Q3"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T4"/><b> Circadian rhythms identify how we do different things on different days.  </b><br/>
+<input type="radio" value="0" name="Q4"/> TRUE<br />
+<input type="radio" value="1" name="Q4"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T5"/><b> A ‘night person’ can still have a healthy circadian rhythm.  </b><br/>
+<input type="radio" value="0" name="Q5"/> TRUE<br />
+<input type="radio" value="1" name="Q5"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T6"/><b> New therapies can permanently change circadian rhythms without causing harm.  </b><br/>
+<input type="radio" value="0" name="Q6"/> TRUE<br />
+<input type="radio" value="1" name="Q6"/> FALSE<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T7"/><b>Naturally-produced vegetables have more nutritional value. 
+ </b><br/>
+<input type="radio" value="0" name="Q7"/> TRUE<br />
+<input type="radio" value="1" name="Q7"/> FALSE<br />
+<br/></li>
+
+
+</ol>      
+
+<P><TEXTAREA name="s1" rows="7" cols="60" readonly> </TEXTAREA> </P>
+<CENTER>
+<INPUT onclick="check_me()" type="button" value="Resalt"/>&nbsp;&nbsp;&nbsp;&nbsp; 
+<INPUT type="reset" value="Clear answers"/> 
+</CENTER>        
+</form> 
+</body>
+</html>

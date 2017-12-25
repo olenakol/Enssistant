@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+<div id="timer"></div>
+<script>
+var limit = 3601; // в секундах
+function processTimer(){
+if (limit > 0) {
+setTimeout("processTimer()",1000);
+limit--;
+} else {
+// здесь действия после завершения таймера
+answer();
+test.input(radio).disable = true;
+//..
+}
+var limit_div = parseInt(limit/60); // минуты
+var limit_mod = limit - limit_div*60; // секунды
+// строка с оставшимся временем
+limit_str = "&nbsp;&nbsp;";
+if (limit_div < 10) limit_str = limit_str + "0";
+limit_str = limit_str + limit_div + ":";
+if (limit_mod < 10) limit_str = limit_str + "0";
+limit_str = limit_str + limit_mod + "&nbsp;&nbsp;";
+// вывод времени
+el_timer = document.getElementById("timer");
+if (el_timer) el_timer.innerHTML = limit_str;
+}
+processTimer();
+</script>		
+     <p><b>In this section, you need to read the text and listen to the audio for better learning. The text contains all the words from "The words" tab</b></p>
+                                            <audio controls>
+    <source src="audio/IELTS11.MP3" type="audio/mpeg" autoplay 
+>
+    The audio tag is not supported by your browser.
+   </audio>
+   <br>
+      <script type="text/javascript" language="JavaScript">// <![CDATA[
+ var res="1"; 
+function check_me()
+{
+    var count=0;
+    with(document.test) {
+if (!Q1[0].checked&&!Q1[1].checked&&!Q1[2].checked&&!Q1[3].checked)  
+{count+=1};  
+if (count>0) alert("You did not do all the questions. Check yourself!")    
+        else answer();
+    }
+} 
+ 
+function control(k, f1) {
+if (k==1&&f1.checked) return true;
+
+return false;
+}
+
+function answer() {
+answ="";
+answ="";
+     with(document)    {
+answ+=control(res.charAt(0) ,test.Q1[0],test.Q1[1],test.Q1[2],test.Q1[3])?"1":"0";
+
+ 
+showResult();
+    }
+}
+ 
+function showResult()   {
+    var nok=0;
+    var i,s;
+ 
+for (i=0; i<answ.length;i++) {nok+=answ.charAt(i)=="1"?1:0;}
+if(nok==21) s="You have an advanced level";
+if(nok<21) s="You have an intermediate level";
+if(nok<=15.75) s="You have an average level";
+if (nok<=10.5) s="You have an discovery level";
+    document.test.s1.
+   value="Number of correct answers. "+nok+" "+s+" Look at back at your check asnwers. If the answer is inccorect, there (+). If answer is wrong, there (-).";
+ 
+with(document.test)
+    {
+    if (answ.charAt(0)=="1") {T1.value=" + "} else {T1.value=" - "};
+   
+     }
+}
+function showhide(obj){
+    if(obj == 'none') return 'inline';
+    else return 'none';
+}
+// ]]>
+</script>
+						   
+<center><h2>Questions</h2></center><br/>
+<p>Circle the appropriate variant</p>
+<form name="test"><ol>
+<li><INPUT type="text" size="1" value="" name="T1"/><b> The speaker says students can visit her
+</b><br/>
+<input type="radio" value="0" name="Q1"/> every morning. <br />
+<input type="radio" value="1" name="Q1"/> some mornings.  <br />
+<input type="radio" value="2" name="Q1"/> mornings only.<br />
+<input type="radio" value="3" name="Q1"/> Friday morning.
+ <br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T1"/><b> According to the speaker, a tutorial</b><br/>
+<input type="radio" value="0" name="Q2"/> is a type of lecture<br />
+<input type="radio" value="1" name="Q2"/> is less important than a lecture.<br />
+<input type="radio" value="2" name="Q2"/> provides a chance to share views.<br />
+<input type="radio" value="3" name="Q2"/> provides an alternative to groupwork.
+<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T1"/><b> When writing essays, the speaker advises the students to
+</b><br/>
+<input type="radio" value="0" name="Q3"/>  research their work well. <br />
+<input type="radio" value="1" name="Q3"/>  name the books they have read. <br />
+<input type="radio" value="2" name="Q3"/> share work with their friends. <br />
+<input type="radio" value="3" name="Q3"/> avoid using other writers’ ideas.
+ <br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T1"/><b>The speaker thinks that plagiarism is
+</b><br/>
+<input type="radio" value="0" name="Q4"/>  a common problem. <br />
+<input type="radio" value="1" name="Q4"/>  an acceptable risk. <br />
+<input type="radio" value="2" name="Q4"/> a minor concern. <br />
+<input type="radio" value="3" name="Q4"/>  a serious offence.
+<br />
+<br/></li>
+
+<li><INPUT type="text" size="1" value="" name="T1"/><b> The speaker’s aims are tointroduce students to university expectations. </b><br/>
+<input type="radio" value="0" name="Q5"/>introduce students to university expectations.  <br />
+<input type="radio" value="1" name="Q5"/>  introduce students to the members of staff.<br />
+<input type="radio" value="2" name="Q5"/>  warn students about the difficulties of studying. <br />
+<input type="radio" value="3" name="Q5"/> guide students round the university.<br />
+<br/></li>
+
+</ol>      
+
+<P><TEXTAREA name="s1" rows="7" cols="60" readonly> </TEXTAREA> </P>
+<CENTER>
+<INPUT onclick="check_me()" type="button" value="Resalt"/>&nbsp;&nbsp;&nbsp;&nbsp; 
+<INPUT type="reset" value="Clear answers"/> 
+</CENTER>        
+</form> 
+</body>
+</html>
